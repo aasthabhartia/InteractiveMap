@@ -42,18 +42,25 @@ static BuildingManager* sharedObj = nil;
     {
         self.buildingList = [[NSMutableArray alloc] init];
         
-        Building *kingLibrary = [[Building alloc] initBuildingWithName:@"King+Library"
+        Building *kingLibrary = [[Building alloc] initBuildingWithName:@"King Library"
                                                             andAddress:@"Dr.+Martin+Luther+King,+Jr.+Library,+150+East+San+Fernando+Street,+San+Jose,+CA+95112"];
         
-        /*Building *engineeringBuilding = [[Building alloc] initBuildingWithName:@"Engineering+Building"
-                                                                    andAddress:@"San+José+State+University+Charles+W.+Davidson+College+of+Engineering,+1+Washington+Square,+San+Jose,+CA+95112"];
+        Building *engineeringBuilding = [[Building alloc] initBuildingWithName:@"Engineering Building" andAddress:@"San+Jose+State+University+Charles+W.+Davidson+College+of+Engineering,+1+Washington+Square,+San+Jose,+CA+95112"];
+        Building *uchidaHall = [[Building alloc] initBuildingWithName:@"Yoshihiro Uchida Hall" andAddress:@"Yoshihiro+Uchida+Hall,+San+Jose,+CA+95112"];
+        Building *studentUnion = [[Building alloc] initBuildingWithName:@"Student Union" andAddress:@"Student+Union+Building,+San+Jose,+CA+95112"];
+        Building *bbc = [[Building alloc] initBuildingWithName:@"BBC" andAddress:@"Boccardo+Business+Complex,+San+Jose,+CA+95112"];
+        Building *southParkingGarage = [[Building alloc] initBuildingWithName:@"South Parking Garage" andAddress:@"San+Jose+State+University+South+Garage,+330+South+7th+Street,+San+Jose,+CA+95112"];
         
-        */
+        
         // TODO : Add the rest of the buildings
         
         
         [self.buildingList addObject:kingLibrary];
-       // [self.buildingList addObject:engineeringBuilding];
+        [self.buildingList addObject:engineeringBuilding];
+        [self.buildingList addObject:uchidaHall];
+        [self.buildingList addObject:bbc];
+        [self.buildingList addObject:studentUnion];
+        [self.buildingList addObject:southParkingGarage];
         
         // TODO : Add the rest of the buildings to the list
     }

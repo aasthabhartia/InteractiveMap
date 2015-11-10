@@ -46,11 +46,13 @@
     
     for (Building* building in buildingManager.buildingList)
     {
+        
         MapResult *mapResult = [mapHelper getResultFromLocation:currentLocation toBuilding:building];
-        NSLog(@"Building (%@), time: %d, distance : %f\n",
+        NSLog(@"Building (%@), time: %@, distance : %@\n",
               building.name,
               mapResult.time,
               mapResult.distance);
+        sleep(6);
     }
 }
 

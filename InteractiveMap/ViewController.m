@@ -6,11 +6,9 @@
 //  Copyright (c) 2015 Aastha Bhartia. All rights reserved.
 //
 
+
 #import "ViewController.h"
-
-@interface ViewController ()
-
-@end
+#import "RootViewController.h"
 
 @implementation ViewController
 
@@ -24,4 +22,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)loadCampusMap:(id)sender{
+    RootViewController * campusMap = [[RootViewController alloc] init];
+    
+    self.navigationController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self.navigationController presentViewController:campusMap animated:YES completion: nil];
+    [campusMap release];
+}
+
+
 @end
+

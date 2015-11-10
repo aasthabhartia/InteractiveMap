@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		09FB24D0F9CB7400CF5FB604 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 918C896AB04AB1C82A8FD4B5 /* libPods.a */; };
+		9D787D2E1BF1DC3C00D242B3 /* campusmap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9D787D2D1BF1DC3C00D242B3 /* campusmap.jpg */; };
+		9DE357591BF1DD6400C88E69 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE357571BF1DD6400C88E69 /* RootViewController.m */; };
+		9DE3575A1BF1DD6400C88E69 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE357581BF1DD6400C88E69 /* RootViewController.xib */; };
 		A3A6A67C1BF0090F00258934 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A6A67B1BF0090F00258934 /* main.m */; };
 		A3A6A67F1BF0090F00258934 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A6A67E1BF0090F00258934 /* AppDelegate.m */; };
 		A3A6A6821BF0090F00258934 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A6A6811BF0090F00258934 /* ViewController.m */; };
@@ -37,6 +40,10 @@
 /* Begin PBXFileReference section */
 		46ED3488CC3AEEA5D1EBCBA2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "InteractiveMap/Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		918C896AB04AB1C82A8FD4B5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D787D2D1BF1DC3C00D242B3 /* campusmap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = campusmap.jpg; path = ../../../campusmap.jpg; sourceTree = "<group>"; };
+		9DE357561BF1DD6400C88E69 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ../../../sjsuMap/RootViewController.h; sourceTree = "<group>"; };
+		9DE357571BF1DD6400C88E69 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = ../../../sjsuMap/RootViewController.m; sourceTree = "<group>"; };
+		9DE357581BF1DD6400C88E69 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RootViewController.xib; path = ../../../sjsuMap/RootViewController.xib; sourceTree = "<group>"; };
 		A355596E17F0E8FF15B7156D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "InteractiveMap/Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A3A6A6761BF0090F00258934 /* InteractiveMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractiveMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A6A67A1BF0090F00258934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,10 +116,14 @@
 		A3A6A6781BF0090F00258934 /* InteractiveMap */ = {
 			isa = PBXGroup;
 			children = (
+				9DE357561BF1DD6400C88E69 /* RootViewController.h */,
+				9DE357571BF1DD6400C88E69 /* RootViewController.m */,
+				9DE357581BF1DD6400C88E69 /* RootViewController.xib */,
 				A3A6A69F1BF0094100258934 /* Model */,
 				A3A6A67D1BF0090F00258934 /* AppDelegate.h */,
 				A3A6A67E1BF0090F00258934 /* AppDelegate.m */,
 				A3A6A6801BF0090F00258934 /* ViewController.h */,
+				9D787D2D1BF1DC3C00D242B3 /* campusmap.jpg */,
 				A3A6A6811BF0090F00258934 /* ViewController.m */,
 				A3A6A6831BF0090F00258934 /* Main.storyboard */,
 				A3A6A6861BF0090F00258934 /* Images.xcassets */,
@@ -271,8 +282,10 @@
 			files = (
 				A3A6A6851BF0090F00258934 /* Main.storyboard in Resources */,
 				A3A6A68A1BF0090F00258934 /* LaunchScreen.xib in Resources */,
+				9DE3575A1BF1DD6400C88E69 /* RootViewController.xib in Resources */,
 				A3A6A6B81BF026EC00258934 /* Podfile in Resources */,
 				A3A6A6871BF0090F00258934 /* Images.xcassets in Resources */,
+				9D787D2E1BF1DC3C00D242B3 /* campusmap.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +355,7 @@
 				A3A6A6821BF0090F00258934 /* ViewController.m in Sources */,
 				A3A6A6AB1BF0102F00258934 /* BuildingManager.m in Sources */,
 				A3A6A6A61BF00DC600258934 /* MapHelper.m in Sources */,
+				9DE357591BF1DD6400C88E69 /* RootViewController.m in Sources */,
 				A3A6A6AF1BF0157800258934 /* MapResult.m in Sources */,
 				A3A6A67F1BF0090F00258934 /* AppDelegate.m in Sources */,
 				A3A6A67C1BF0090F00258934 /* main.m in Sources */,
@@ -395,7 +409,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -439,7 +453,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;

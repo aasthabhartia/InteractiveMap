@@ -13,11 +13,12 @@
 
 @interface MapResult : NSObject
 
-@property int time;
-@property float distance;
+@property NSString* time;
+@property NSString* distance;
 
--(id) initWithTime:(int)time andDistance:(float)distance;
+-(id) initWithTime:(NSString*)time andDistance:(NSString*)distance;
 
+-(id) init;
 @end
 
 #endif

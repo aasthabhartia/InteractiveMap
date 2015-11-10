@@ -11,8 +11,7 @@
 
 @interface Location ()
 
-@property double latitude;
-@property double longitude;
+
 
 @end
 

@@ -6,10 +6,10 @@
          contextName = "-[MapHelper fetchedData:]:MapHelper.m">
          <PersistentStrings>
             <PersistentString
-               value = "[json objectForKey:@&quot;rows&quot;]">
+               value = "[json valueForKeyPath:@&quot;rows.elements.distance.value&quot;]">
             </PersistentString>
             <PersistentString
-               value = "[json valueForKeyPath:@&quot;rows.elements.distance.value&quot;]">
+               value = "json[@&quot;rows&quot;][0][@&quot;elements&quot;][0][@&quot;distance&quot;][@&quot;text&quot;]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -13,6 +13,9 @@
 
 @interface Location : NSObject
 
+@property double latitude;
+@property double longitude;
+
 - (id) initWithLatitude:(double)pLatitude andLongitude:(double)pLongitude;
 
 @end

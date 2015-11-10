@@ -27,6 +27,8 @@
 @implementation MapHelper
 
 static MapHelper* sharedObj = nil;
+static const NSString* API_KEY = @"AIzaSyDpiS8sy8Sn225n7UQjQdXb9QRGwtHc5A0";
+static NSString* GOOGLE_API_URL = @"https://maps.googleapis.com/maps/api/distancematrix/json?origins=%f,%f&destinations=%@&key=%@";
 
 +(MapHelper*) sharedInstance;
 {
@@ -45,42 +47,36 @@ static MapHelper* sharedObj = nil;
 
 -(MapResult *) getResultFromLocation:(Location *)pLocation toBuilding:(Building *)pBuilding
 {
-    int time = 5;
-    float distance = 500;
-    //https://maps.googleapis.com/maps/api/distancematrix/json?origins=Vancouver+BC|Seattle&destinations=San+Francisco|Victoria+BC&mode=bicycling&language=fr-FR&key=YOUR_API_KEY
-    NSString *startAddress = @"San+Jose+State+University+South+Garage,+330+South+7th+Street,+San+Jose,+95112";
-   NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/distancematrix/json?origins=%@&destinations=%@&key=AIzaSyDpiS8sy8Sn225n7UQjQdXb9QRGwtHc5A0", startAddress, pBuilding.address];
+    NSString *url = [NSString stringWithFormat:GOOGLE_API_URL,
+                        pLocation.latitude,
+                        pLocation.longitude,
+                        pBuilding.address, API_KEY];
     
-    /*NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/distancematrix/json?origins=Darling+Harbour+NSW+Australia&destinations=Bobcaygeon+ON&key=AIzaSyDpiS8sy8Sn225n7UQjQdXb9QRGwtHc5A0"];*/
-   
-    
-    //Formulate the string as a URL object.
     NSURL *googleRequestURL=[NSURL URLWithString:url];
-    
-    // Retrieve the results of the URL.
-  
-        NSData* data = [NSData dataWithContentsOfURL: googleRequestURL];
-        [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
-    
-    
-    // TODO : Connect to Google API and get this for reals
-    
-    return [[MapResult alloc] initWithTime:time andDistance:distance];
+    MapResult *result = [[MapResult alloc] init];
+    NSData* data = [NSData dataWithContentsOfURL: googleRequestURL];
+    [self performSelectorOnMainThread:@selector(fetchedData:)
+                           withObject:@[data,result]
+                        waitUntilDone:YES];
+    return result;
 }
 
--(void)fetchedData:(NSData *)responseData {
+-(void)fetchedData:(NSArray *)array {
     //parse out the json data
     NSError* error;
     NSDictionary* json = [NSJSONSerialization
-                          JSONObjectWithData:responseData
+                          JSONObjectWithData:[array objectAtIndex:0]
+                          
                           options:kNilOptions
                           error:&error];
     
-    //The results from Google will be an array obtained from the NSDictionary object with the key "results".
-    NSArray* places = [json objectForKey:@"rows.elements.distance.value"];
+    NSMutableString * distance = json[@"rows"][0][@"elements"][0][@"distance"][@"text"];
+    NSMutableString * duration = json[@"rows"][0][@"elements"][0][@"duration"][@"text"];
     
-    //Write out the data to the console.
-    NSLog(@"Google Data: %@", places);
+    MapResult *result = [array objectAtIndex:1];
+    result.time = duration;
+    result.distance = distance;
+    
 }
 
 
@@ -93,12 +89,6 @@ static MapHelper* sharedObj = nil;
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         self.locationManager.distanceFilter = kCLDistanceFilterNone;
-        
-        if ( ![self.locationManager locationServicesEnabled] )
-        {
-            NSLog(@"Location Services Disabled");
-        }
-        
         [self.locationManager requestWhenInUseAuthorization];
         
         self.currentLocation = nil;

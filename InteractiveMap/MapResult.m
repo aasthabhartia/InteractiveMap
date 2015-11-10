@@ -16,7 +16,7 @@
 
 @implementation MapResult
 
--(id) initWithTime:(int)pTime andDistance:(float)pDistance;
+-(id) initWithTime:(NSString*)pTime andDistance:(NSString*)pDistance
 {
     self = [super init];
     
@@ -29,5 +29,17 @@
     return self;
 }
 
+-(id) init
+{
+    self = [super init];
+    
+    if ( self )
+    {
+        self.time = nil;
+        self.distance = nil;
+    }
+    
+    return self;
+}
 
 @end

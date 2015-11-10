@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[MapHelper fetchedData:]:MapHelper.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[json objectForKey:@&quot;rows&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "[json valueForKeyPath:@&quot;rows.elements.distance.value&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MapHelper init]:MapHelper.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.locationManager.authorizationStatus">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TestCases receivedFirstCurrentLocation]:TestCases.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MapHelper getResultFromLocation:toBuilding:]:MapHelper.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MapHelper locationManager:didFailWithError:]:MapHelper.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MapHelper locationManager:didUpdateLocations:]:MapHelper.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

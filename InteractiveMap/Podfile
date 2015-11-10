@@ -1,0 +1,4 @@
+xcodeproj '/Users/aasthabhartia/Documents/277/InteractiveMap/InteractiveMap.xcodeproj'
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.1'
+pod 'GoogleMaps'

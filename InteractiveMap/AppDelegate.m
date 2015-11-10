@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "TestCases.h"
+@import GoogleMaps;
 
 @interface AppDelegate ()
 
@@ -17,6 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //[GMSServices provideAPIKey:@"AIzaSyAlCtVfH23jI-Zn-uKnvo41h08oZGYFOsA"];
+    
+    
+    // FIXME : Right now only running test cases to setup Model
+    [[TestCases alloc] initAndRun];
+    
     return YES;
 }
 

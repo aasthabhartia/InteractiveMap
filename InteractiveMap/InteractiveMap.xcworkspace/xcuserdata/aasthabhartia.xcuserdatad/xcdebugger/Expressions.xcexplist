@@ -3,13 +3,16 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[MapHelper fetchedData:]:MapHelper.m">
+         contextName = "-[MapHelper getResultFromLocation:toBuilding:]:MapHelper.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MapHelper locationManager:didUpdateLocations:]:MapHelper.m">
          <PersistentStrings>
             <PersistentString
-               value = "[json valueForKeyPath:@&quot;rows.elements.distance.value&quot;]">
+               value = "self.currentLocation">
             </PersistentString>
             <PersistentString
-               value = "json[@&quot;rows&quot;][0][@&quot;elements&quot;][0][@&quot;distance&quot;][@&quot;text&quot;]">
+               value = "self.currentLocation.coordinate">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -22,16 +25,54 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[TestCases receivedFirstCurrentLocation]:TestCases.m">
+         contextName = "main:main.m">
       </ContextState>
       <ContextState
-         contextName = "-[MapHelper getResultFromLocation:toBuilding:]:MapHelper.m">
+         contextName = "-[MapHelper getCurrentLocation]:MapHelper.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.currentLocation">
+            </PersistentString>
+            <PersistentString
+               value = "self.currentLocation == NULL">
+            </PersistentString>
+            <PersistentString
+               value = "self">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "-[MapHelper locationManager:didFailWithError:]:MapHelper.m">
       </ContextState>
       <ContextState
-         contextName = "-[MapHelper locationManager:didUpdateLocations:]:MapHelper.m">
+         contextName = "-[MapHelper fetchedData:]:MapHelper.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[json valueForKeyPath:@&quot;rows.elements.distance.value&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "json[@&quot;rows&quot;][0][@&quot;elements&quot;][0][@&quot;distance&quot;][@&quot;text&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RootViewController handleSingleTap:]:RootViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentLocation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TestCases receivedFirstCurrentLocation]:TestCases.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[RootViewController viewDidLoad]:RootViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.subviews[0]">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

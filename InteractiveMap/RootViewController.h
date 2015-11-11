@@ -10,12 +10,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UIViewController<UIScrollViewDelegate> {
-    UIImageView *sjMap;
+@interface RootViewController : UIViewController<UIGestureRecognizerDelegate,UIScrollViewDelegate> {
+        UIImageView *imageView;
+    UIButton *southGarageButton;
 }
 
-@property (retain, nonatomic) IBOutlet UIImageView *sjMap;
-
+@property (strong, nonatomic) IBOutlet UIView *subView;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UIButton *southGarageButton;
+@property (strong, nonatomic) IBOutlet UIButton *BBCButton;
+@property (strong, nonatomic) IBOutlet UIButton *engineeringButton;
+@property (strong, nonatomic) IBOutlet UIButton *kingLibraryButton;
+@property (strong, nonatomic) IBOutlet UIButton *studentUnionButton;
+@property (strong, nonatomic) IBOutlet UIButton *YUHbutton;
 
 
 

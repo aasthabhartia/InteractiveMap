@@ -16,10 +16,10 @@
 
 @interface MapHelper ()
 
-@property NSMutableArray *buildingList;
-
-@property CLLocation *currentLocation;
-@property CLLocationManager *locationManager;
+@property bool hasLocation;
+@property (strong) NSMutableArray *buildingList;
+@property (strong) Location *currentLocation;
+@property (strong) CLLocationManager *locationManager;
 
 @end
 
@@ -91,7 +91,8 @@ static NSString* GOOGLE_API_URL = @"https://maps.googleapis.com/maps/api/distanc
         self.locationManager.distanceFilter = kCLDistanceFilterNone;
         [self.locationManager requestWhenInUseAuthorization];
         
-        self.currentLocation = nil;
+        self.hasLocation = false;
+        self.currentLocation = [[Location alloc] initWithLatitude:0 andLongitude:0];
 
         [self.locationManager startUpdatingLocation];
     }
@@ -101,19 +102,25 @@ static NSString* GOOGLE_API_URL = @"https://maps.googleapis.com/maps/api/distanc
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    @synchronized ( self.currentLocation )
+    if ( locations.count > 0 )
     {
-        if ( self.currentLocation == nil && self.delegate != nil )
+        CLLocation *location = [locations lastObject];
+        CLLocationDegrees latitude = location.coordinate.latitude;
+        CLLocationDegrees longitude = location.coordinate.longitude;
+        bool hadLocation = self.hasLocation;
+        @synchronized ( self )
         {
-             self.currentLocation = [locations lastObject];
+            self.currentLocation.latitude = latitude;
+            self.currentLocation.longitude = longitude;
+            self.hasLocation = true;
+        }
+        
+        if ( !hadLocation && self.delegate != nil )
             [self.delegate receivedFirstCurrentLocation];
-        }
-        else
-        {
-            self.currentLocation = [locations lastObject];
-        }
-        
-        
+    }
+    else
+    {
+        NSLog( @"Did not get location" );
     }
 }
 
@@ -125,17 +132,16 @@ static NSString* GOOGLE_API_URL = @"https://maps.googleapis.com/maps/api/distanc
 
 -(Location*) getCurrentLocation
 {
-    if ( self.currentLocation == nil )
+    Location *location = nil;
+    @synchronized ( self )
     {
-        // TODO : Deal with the fact that current location is not ready
-        // return a nil and handle with popup saying please wait
-        return [[Location alloc] initWithLatitude:0 andLongitude:0];
+        if ( self.hasLocation )
+        {
+            location = [[Location alloc] initWithLatitude:self.currentLocation.latitude
+                                             andLongitude:self.currentLocation.longitude];
+        }
     }
-    
-    CLLocationDegrees latitude = self.currentLocation.coordinate.latitude;
-    CLLocationDegrees longitude = self.currentLocation.coordinate.longitude;
-    
-    return [[Location alloc] initWithLatitude:latitude andLongitude:longitude];
+    return location;
 }
 
 @end

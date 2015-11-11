@@ -13,8 +13,8 @@
 
 @interface MapResult : NSObject
 
-@property NSString* time;
-@property NSString* distance;
+@property (weak) NSString* time;
+@property (weak) NSString* distance;
 
 -(id) initWithTime:(NSString*)time andDistance:(NSString*)distance;
 

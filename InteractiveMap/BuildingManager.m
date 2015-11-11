@@ -45,15 +45,20 @@ static BuildingManager* sharedObj = nil;
         Building *kingLibrary = [[Building alloc] initBuildingWithName:@"King Library"
                                                             andAddress:@"Dr.+Martin+Luther+King,+Jr.+Library,+150+East+San+Fernando+Street,+San+Jose,+CA+95112"];
         
-        Building *engineeringBuilding = [[Building alloc] initBuildingWithName:@"Engineering Building" andAddress:@"San+Jose+State+University+Charles+W.+Davidson+College+of+Engineering,+1+Washington+Square,+San+Jose,+CA+95112"];
-        Building *uchidaHall = [[Building alloc] initBuildingWithName:@"Yoshihiro Uchida Hall" andAddress:@"Yoshihiro+Uchida+Hall,+San+Jose,+CA+95112"];
-        Building *studentUnion = [[Building alloc] initBuildingWithName:@"Student Union" andAddress:@"Student+Union+Building,+San+Jose,+CA+95112"];
-        Building *bbc = [[Building alloc] initBuildingWithName:@"BBC" andAddress:@"Boccardo+Business+Complex,+San+Jose,+CA+95112"];
-        Building *southParkingGarage = [[Building alloc] initBuildingWithName:@"South Parking Garage" andAddress:@"San+Jose+State+University+South+Garage,+330+South+7th+Street,+San+Jose,+CA+95112"];
+        Building *engineeringBuilding = [[Building alloc] initBuildingWithName:@"Engineering Building"
+                                                                    andAddress:@"San+Jose+State+University+Charles+W.+Davidson+College+of+Engineering,+1+Washington+Square,+San+Jose,+CA+95112"];
         
+        Building *uchidaHall = [[Building alloc] initBuildingWithName:@"Yoshihiro Uchida Hall"
+                                                           andAddress:@"Yoshihiro+Uchida+Hall,+San+Jose,+CA+95112"];
         
-        // TODO : Add the rest of the buildings
+        Building *studentUnion = [[Building alloc] initBuildingWithName:@"Student Union"
+                                                             andAddress:@"Student+Union+Building,+San+Jose,+CA+95112"];
         
+        Building *bbc = [[Building alloc] initBuildingWithName:@"BBC"
+                                                    andAddress:@"Boccardo+Business+Complex,+San+Jose,+CA+95112"];
+        
+        Building *southParkingGarage = [[Building alloc] initBuildingWithName:@"South Parking Garage"
+                                                                   andAddress:@"San+Jose+State+University+South+Garage,+330+South+7th+Street,+San+Jose,+CA+95112"];
         
         [self.buildingList addObject:kingLibrary];
         [self.buildingList addObject:engineeringBuilding];
@@ -62,10 +67,22 @@ static BuildingManager* sharedObj = nil;
         [self.buildingList addObject:studentUnion];
         [self.buildingList addObject:southParkingGarage];
         
-        // TODO : Add the rest of the buildings to the list
     }
     
     return self;
+}
+
+-(Building*) searchBuildingWithName:(NSString*)pName
+{
+    for (Building* building in self.buildingList)
+    {
+        if ([building.name isEqualToString:pName])
+        {
+            return building;
+        }
+    }
+    return nil;
+
 }
 
 

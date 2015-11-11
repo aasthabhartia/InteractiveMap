@@ -20,7 +20,7 @@
 
 @interface MapHelper : NSObject <CLLocationManagerDelegate>
 
-@property id<MapHelperDelegate> delegate;
+@property (weak) id<MapHelperDelegate> delegate;
 
 +(MapHelper *) sharedInstance;
 -(MapResult *) getResultFromLocation:(Location *)pLocation toBuilding:(Building *)pBuilding;

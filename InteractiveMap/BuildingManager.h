@@ -10,12 +10,15 @@
 #define InteractiveMap_BuildingManager_h
 
 #import <Foundation/Foundation.h>
+#import "Building.h"
 
 @interface BuildingManager : NSObject
 
-@property NSMutableArray *buildingList;
+@property (strong) NSMutableArray *buildingList;
 
 +(BuildingManager*) sharedInstance;
+
+-(Building*) searchBuildingWithName:(NSString*)pName;
 
 @end
 

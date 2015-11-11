@@ -27,7 +27,6 @@
     
     self.navigationController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self.navigationController presentViewController:campusMap animated:YES completion: nil];
-    [campusMap release];
 }
 
 

@@ -22,7 +22,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     self.RootViewController = [[RootViewController alloc] init];
@@ -34,7 +34,7 @@
     //[GMSServices provideAPIKey:@"AIzaSyAlCtVfH23jI-Zn-uKnvo41h08oZGYFOsA"];
     
     // FIXME : Right now only running test cases to setup Model
-    [[TestCases alloc] initAndRun];
+    //[[TestCases alloc] initAndRun];
     
     return YES;
 }

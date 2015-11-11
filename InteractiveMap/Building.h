@@ -11,8 +11,8 @@
 
 @interface Building : NSObject
 
-@property NSString *name;
-@property NSString *address;
+@property (weak) NSString *name;
+@property (weak) NSString *address;
 
 - (id) initBuildingWithName:(NSString*)name andAddress:(NSString *)address;
 

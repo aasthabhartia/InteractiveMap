@@ -29,6 +29,7 @@
 @synthesize kingLibraryButton;
 @synthesize YUHbutton;
 @synthesize studentUnionButton;
+@synthesize searchBar;
 
 -(IBAction) btnReturn:(id) sender{
     [self dismissViewControllerAnimated:YES completion:nil ];
@@ -46,7 +47,7 @@
     //[scrollView setMinimumZoomScale:0.1];
     //[scrollView setMaximumZoomScale:2.0];
     scrollView.delegate = self;
-    
+    searchBar.delegate = self;
     //scrollView.contentSize = imageView.frame.size;
     //scrollView.zoomScale = 0.8;
     //    if(getScale()!=0) {
@@ -139,6 +140,32 @@
                                  sView.contentSize.height * 0.5 + offsetY);
 
     return subView;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    BuildingManager *buildingManager = [BuildingManager sharedInstance];
+    Building *building = [buildingManager searchBuildingWithName:searchBar.text];
+    if (building!=nil)
+    {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:building.name
+                                                        message:@"Need to zoom into building"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Search Result"
+                                                        message:@"Building Not found!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+
+    }
 }
 
 @end

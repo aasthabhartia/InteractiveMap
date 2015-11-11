@@ -11,10 +11,12 @@
                 <outlet property="engineeringButton" destination="wgp-4O-EL5" id="HAw-zI-ped"/>
                 <outlet property="kingLibraryButton" destination="pnS-gO-Jto" id="zfx-4e-OB5"/>
                 <outlet property="scrollView" destination="dzZ-vv-Azw" id="t9n-Vi-kfF"/>
+                <outlet property="searchBar" destination="Sqj-iN-UMQ" id="gHd-Rn-AxB"/>
                 <outlet property="southGarageButton" destination="ykB-qT-U3g" id="kxW-QQ-DjY"/>
                 <outlet property="studentUnionButton" destination="UBv-h1-y9P" id="vl6-9Y-ofj"/>
                 <outlet property="subView" destination="raL-6E-oG3" id="fpa-NK-cI9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="ITo-wD-iOi"/>
+                <outletCollection property="searchBar" destination="Sqj-iN-UMQ" id="l7a-rB-arR"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

@@ -56,6 +56,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[RootViewController searchBarSearchButtonClicked:]:RootViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "searchBar.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[RootViewController handleSingleTap:]:RootViewController.m">
          <PersistentStrings>
             <PersistentString

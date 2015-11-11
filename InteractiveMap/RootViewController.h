@@ -10,7 +10,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UIViewController<UIGestureRecognizerDelegate,UIScrollViewDelegate> {
+@interface RootViewController : UIViewController<UIGestureRecognizerDelegate,UIScrollViewDelegate,UISearchBarDelegate> {
         UIImageView *imageView;
     UIButton *southGarageButton;
 }
@@ -24,8 +24,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *kingLibraryButton;
 @property (strong, nonatomic) IBOutlet UIButton *studentUnionButton;
 @property (strong, nonatomic) IBOutlet UIButton *YUHbutton;
-
-
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
 -(IBAction) btnReturn:(id) sender;
 

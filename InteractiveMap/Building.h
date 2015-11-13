@@ -12,9 +12,10 @@
 @interface Building : NSObject
 
 @property (weak) NSString *name;
+@property (weak) NSString *formattedAddress;
 @property (weak) NSString *address;
 
-- (id) initBuildingWithName:(NSString*)name andAddress:(NSString *)address;
+- (id) initBuildingWithName:(NSString*)name andAddress:(NSString *)address andFormattedAddress: (NSString *)formattedAddress;
 
 @end
 

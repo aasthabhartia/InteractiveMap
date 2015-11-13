@@ -6,9 +6,8 @@
 //  Copyright © 2015 Aastha Bhartia. All rights reserved.
 //
 
-
-
 #import <UIKit/UIKit.h>
+#import "SamplePopupViewController.h"
 
 @interface RootViewController : UIViewController<UIGestureRecognizerDelegate,UIScrollViewDelegate,UISearchBarDelegate> {
         UIImageView *imageView;
@@ -25,6 +24,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *studentUnionButton;
 @property (strong, nonatomic) IBOutlet UIButton *YUHbutton;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+
 
 -(IBAction) btnReturn:(id) sender;
 

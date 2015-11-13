@@ -3,7 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[MapHelper getResultFromLocation:toBuilding:]:MapHelper.m">
+         contextName = "-[SamplePopupViewController viewDidLoad]:SamplePopupViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[MapHelper locationManager:didUpdateLocations:]:MapHelper.m">
@@ -17,10 +17,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[MapHelper init]:MapHelper.m">
+         contextName = "-[RootViewController viewDidLoad]:RootViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.locationManager.authorizationStatus">
+               value = "self.view.subviews[0]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -28,16 +28,10 @@
          contextName = "main:main.m">
       </ContextState>
       <ContextState
-         contextName = "-[MapHelper getCurrentLocation]:MapHelper.m">
+         contextName = "-[RootViewController searchBarSearchButtonClicked:]:RootViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.currentLocation">
-            </PersistentString>
-            <PersistentString
-               value = "self.currentLocation == NULL">
-            </PersistentString>
-            <PersistentString
-               value = "self">
+               value = "searchBar.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -56,10 +50,27 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[RootViewController searchBarSearchButtonClicked:]:RootViewController.m">
+         contextName = "-[MapHelper getResultFromLocation:toBuilding:]:MapHelper.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MapHelper getCurrentLocation]:MapHelper.m">
          <PersistentStrings>
             <PersistentString
-               value = "searchBar.text">
+               value = "self.currentLocation">
+            </PersistentString>
+            <PersistentString
+               value = "self.currentLocation == NULL">
+            </PersistentString>
+            <PersistentString
+               value = "self">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MapHelper init]:MapHelper.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.locationManager.authorizationStatus">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -67,7 +78,13 @@
          contextName = "-[RootViewController handleSingleTap:]:RootViewController.m">
          <PersistentStrings>
             <PersistentString
+               value = "samplePopupViewController.buildingName">
+            </PersistentString>
+            <PersistentString
                value = "currentLocation">
+            </PersistentString>
+            <PersistentString
+               value = "[UIImage imageNamed:imgName]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -75,12 +92,7 @@
          contextName = "-[TestCases receivedFirstCurrentLocation]:TestCases.m">
       </ContextState>
       <ContextState
-         contextName = "-[RootViewController viewDidLoad]:RootViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.view.subviews[0]">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "__38-[RootViewController handleSingleTap:]_block_invoke:RootViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

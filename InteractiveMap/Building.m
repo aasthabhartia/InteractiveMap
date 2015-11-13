@@ -19,7 +19,8 @@
 
 @implementation Building
 
-- (id) initBuildingWithName:(NSString*)pName andAddress:(NSString *)pAddress
+- (id) initBuildingWithName:(NSString*)pName andAddress:(NSString *)pAddress andFormattedAddress: (NSString *)pformattedAddress;
+
 {
     self = [super init];
     
@@ -27,6 +28,7 @@
     {
         self.name = pName;
         self.address = pAddress;
+        self.formattedAddress = pformattedAddress;
     }
     
     return self;

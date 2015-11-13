@@ -13,6 +13,8 @@
 #import "Location.h"
 #import "MapHelper.h"
 #import "MapResult.h"
+#import "SamplePopupViewController.h"
+#import "UIViewController+CWPopup.h"
 
 @interface RootViewController ()
 
@@ -31,6 +33,8 @@
 @synthesize studentUnionButton;
 @synthesize searchBar;
 
+
+
 -(IBAction) btnReturn:(id) sender{
     [self dismissViewControllerAnimated:YES completion:nil ];
 }
@@ -40,7 +44,7 @@
     // just to get the current location fetch started
     MapHelper *mapHelper = [MapHelper sharedInstance];
     [mapHelper getCurrentLocation];
-
+    self.useBlurForPopup = YES;
     //CGRect scrollFrame = CGRectMake(0, 20, 600, 800);
     
     //[scrollView setFrame:scrollFrame];
@@ -63,37 +67,44 @@
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                 action:@selector(handleSingleTap:)];
-    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTapsRequired = 2;
     singleTap.delegate = self;
     [self.southGarageButton addGestureRecognizer:singleTap];
     
     singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                         action:@selector(handleSingleTap:)];
-    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTapsRequired = 2;
     singleTap.delegate = self;
     [self.BBCButton addGestureRecognizer:singleTap];
     
     singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                         action:@selector(handleSingleTap:)];
-    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTapsRequired = 2;
     singleTap.delegate = self;
     [self.engineeringButton addGestureRecognizer:singleTap];
     
     singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                         action:@selector(handleSingleTap:)];
-    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTapsRequired = 2;
     singleTap.delegate = self;
     [self.kingLibraryButton addGestureRecognizer:singleTap];
     singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                         action:@selector(handleSingleTap:)];
-    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTapsRequired = 2;
     singleTap.delegate = self;
     [self.YUHbutton addGestureRecognizer:singleTap];
     singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                         action:@selector(handleSingleTap:)];
-    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTapsRequired = 2;
     singleTap.delegate = self;
     [self.studentUnionButton addGestureRecognizer:singleTap];
+    
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissPopup)];
+    tapRecognizer.numberOfTapsRequired = 1;
+    tapRecognizer.delegate = self;
+    [self.view addGestureRecognizer:tapRecognizer];
+
+    
 
     [super viewDidLoad];
     
@@ -110,25 +121,36 @@
     MapResult *mapResult = [mapHelper getResultFromLocation:currentLocation
                                                  toBuilding:building];
     
+    
     NSString *message;
     
     if ( currentLocation != nil )
     {
-        message = [NSString stringWithFormat:@"Distance: %@, Time: %@",
-                                            mapResult.distance,
-                                            mapResult.time];
+        NSString *imgName = (@"%@",building.name);
+        UIImage * buildingImage = [[UIImage alloc] init ];
+        buildingImage = [UIImage imageNamed:imgName];
+        SamplePopupViewController *popupController = [[SamplePopupViewController alloc] initWithNibName:@"SamplePopupViewController" bundle:nil];
+       [self presentPopupViewController:popupController animated:YES completion:^(void) {
+            NSLog(@"popup view presented");}];
+        [popupController.buildingName setTitle:building.name];
+        [popupController.addressDetail setText:building.formattedAddress];
+        [popupController.durationDetail setText:mapResult.time];
+        [popupController.distanceDetail setText:mapResult.distance];
+        [popupController.buildingImage setImage:buildingImage];
+        
     }
     else
     {
         message = @"Current location is not available yet, try again later";
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:building.name
+                                                        message:message
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:building.name
-                                                    message:message
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
+    
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)sView
@@ -167,6 +189,15 @@
 
     }
 }
+
+- (void)dismissPopup {
+    if (self.popupViewController != nil) {
+        [self dismissPopupViewControllerAnimated:YES completion:^{
+            NSLog(@"popup view dismissed");
+        }];
+    }
+}
+
 
 @end
 

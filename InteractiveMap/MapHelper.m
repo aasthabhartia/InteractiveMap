@@ -114,9 +114,10 @@ static NSString* GOOGLE_API_URL = @"https://maps.googleapis.com/maps/api/distanc
             self.currentLocation.longitude = longitude;
             self.hasLocation = true;
         }
-        
-        if ( !hadLocation && self.delegate != nil )
-            [self.delegate receivedFirstCurrentLocation];
+        if( self.hasLocation)
+            [self.delegate updatedLocation];
+        //if ( !hadLocation && self.delegate != nil )
+            //[self.delegate receivedFirstCurrentLocation];
     }
     else
     {

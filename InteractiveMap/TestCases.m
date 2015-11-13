@@ -35,7 +35,7 @@
 }
 
 
-- (void) receivedFirstCurrentLocation
+/*- (void) receivedFirstCurrentLocation
 {
     MapHelper *mapHelper = [MapHelper sharedInstance];
     // We can be sure here that current location is actually valid
@@ -54,6 +54,6 @@
               mapResult.distance);
         sleep(6);
     }
-}
+}*/
 
 @end

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "SamplePopupViewController.h"
+#import "MapHelperDelgate.h"
+#import "MapHelper.h"
 
-@interface RootViewController : UIViewController<UIGestureRecognizerDelegate,UIScrollViewDelegate,UISearchBarDelegate> {
+@interface RootViewController : UIViewController<UIGestureRecognizerDelegate,UIScrollViewDelegate,UISearchBarDelegate,MapHelperDelegate> {
         UIImageView *imageView;
     UIButton *southGarageButton;
 }
@@ -24,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *studentUnionButton;
 @property (strong, nonatomic) IBOutlet UIButton *YUHbutton;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property MapHelper *mapHelper;
 
 
 

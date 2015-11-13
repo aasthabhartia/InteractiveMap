@@ -107,7 +107,8 @@
     tapRecognizer.delegate = self;
     [self.view addGestureRecognizer:tapRecognizer];
 
-    
+    mapHelper = [MapHelper sharedInstance];
+    mapHelper.delegate = self;
 
     [super viewDidLoad];
     
@@ -117,11 +118,10 @@
 - (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
     
     UIButton *myButton = (UIButton *)recognizer.view;
-    MapHelper *mapHelper = [MapHelper sharedInstance];
-    Location *currentLocation = [mapHelper getCurrentLocation];
+    Location *currentLocation = [self.mapHelper getCurrentLocation];
     BuildingManager *buildingManager = [BuildingManager sharedInstance];
     Building *building = [buildingManager searchBuildingWithName:myButton.titleLabel.text];
-    MapResult *mapResult = [mapHelper getResultFromLocation:currentLocation
+    MapResult *mapResult = [self.mapHelper getResultFromLocation:currentLocation
                                                  toBuilding:building];
     
     
@@ -227,26 +227,19 @@
     }
 }
 
--(void)setAnchorPoint:(CGPoint)anchorPoint forView:(UIView *)view
+
+
+- (void) updatedLocation
 {
-    CGPoint newPoint = CGPointMake(view.bounds.size.width * anchorPoint.x,
-                                   view.bounds.size.height * anchorPoint.y);
-    CGPoint oldPoint = CGPointMake(view.bounds.size.width * view.layer.anchorPoint.x,
-                                   view.bounds.size.height * view.layer.anchorPoint.y);
+    MapHelper *mapHelper = [MapHelper sharedInstance];
+    Location *currentLocation = [mapHelper getCurrentLocation];
+    LocationConversionHelper *locationConversionHelper = [LocationConversionHelper sharedInstance];
+    XY *result = [locationConversionHelper convertLocationToXY:currentLocation withImageWidth:self.imageView.image.size.width];
+
+    CAShapeLayer *circleLayer = [CAShapeLayer layer];
+    [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(result.x,result.y , 10, 10)] CGPath]];
     
-    newPoint = CGPointApplyAffineTransform(newPoint, view.transform);
-    oldPoint = CGPointApplyAffineTransform(oldPoint, view.transform);
-    
-    CGPoint position = view.layer.position;
-    
-    position.x -= oldPoint.x;
-    position.x += newPoint.x;
-    
-    position.y -= oldPoint.y;
-    position.y += newPoint.y;
-    
-    view.layer.position = position;
-    view.layer.anchorPoint = anchorPoint;
+    [[subView layer] addSublayer:circleLayer];
 }
 
 @end

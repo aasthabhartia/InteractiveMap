@@ -10,7 +10,9 @@
 #define InteractiveMap_MapHelperDelgate_h
 
 @protocol MapHelperDelegate <NSObject>
-- (void) receivedFirstCurrentLocation;
+//- (void) receivedFirstCurrentLocation;
+-(void) updatedLocation;
+
 @end
 
 #endif

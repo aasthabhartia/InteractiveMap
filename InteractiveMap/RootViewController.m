@@ -66,7 +66,9 @@
     //CGFloat tempy = imageView.center.y - (scrollView.bounds.size.height/2);
     //CGPoint myScrollViewOffset = CGPointMake( tempx, tempy);
     //scrollView.contentOffset = myScrollViewOffset;
-    
+    self.circleLayer = [CAShapeLayer layer];
+    self.circleLayer.fillColor = [UIColor redColor].CGColor;
+    [[subView layer] addSublayer:self.circleLayer];
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                 action:@selector(handleSingleTap:)];
@@ -237,10 +239,9 @@
     LocationConversionHelper *locationConversionHelper = [LocationConversionHelper sharedInstance];
     XY *result = [locationConversionHelper convertLocationToXY:currentLocation withImageWidth:self.imageView.image.size.width];
 
-    CAShapeLayer *circleLayer = [CAShapeLayer layer];
-    [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(result.x,result.y , 10, 10)] CGPath]];
+        [self.circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(result.x,result.y , 10, 10)] CGPath]];
     
-    [[subView layer] addSublayer:circleLayer];
+    
 }
 
 @end

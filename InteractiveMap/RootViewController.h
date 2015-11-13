@@ -27,7 +27,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *YUHbutton;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property MapHelper *mapHelper;
-
+@property CAShapeLayer *circleLayer;
 
 
 -(IBAction) btnReturn:(id) sender;

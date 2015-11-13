@@ -145,6 +145,9 @@
          contextName = "-[RootViewController updatedLocation]:RootViewController.m">
          <PersistentStrings>
             <PersistentString
+               value = "self.circleLayer">
+            </PersistentString>
+            <PersistentString
                value = "self.imageView.image.size.width">
             </PersistentString>
          </PersistentStrings>

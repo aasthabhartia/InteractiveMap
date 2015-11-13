@@ -25,11 +25,11 @@
 		A3A6A6B81BF026EC00258934 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A3A6A6B71BF026EC00258934 /* Podfile */; };
 		A3A6A6BD1BF1DF5700258934 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A6A6BB1BF1DF5700258934 /* RootViewController.m */; };
 		A3A6A6BE1BF1DF5700258934 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3A6A6BC1BF1DF5700258934 /* RootViewController.xib */; };
-		A3D729CE1BF5BEEB00306431 /* UIViewController+CWPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D729CD1BF5BEEB00306431 /* UIViewController+CWPopup.m */; };
-		A3D729D21BF5BF0400306431 /* SamplePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D729D01BF5BF0400306431 /* SamplePopupViewController.m */; };
-		A3D729D31BF5BF0400306431 /* SamplePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D729D11BF5BF0400306431 /* SamplePopupViewController.xib */; };
 		A3D729FE1BF5F23F00306431 /* XY.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D729FD1BF5F23F00306431 /* XY.m */; };
 		A3D72A021BF5F49300306431 /* LocationConversionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D72A011BF5F49300306431 /* LocationConversionHelper.m */; };
+		A3D72A051BF6B03E00306431 /* UIViewController+CWPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D72A041BF6B03E00306431 /* UIViewController+CWPopup.m */; };
+		A3D72A091BF6B09F00306431 /* SamplePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D72A061BF6B09F00306431 /* SamplePopupViewController.m */; };
+		A3D72A0A1BF6B09F00306431 /* SamplePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D72A081BF6B09F00306431 /* SamplePopupViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,15 +77,15 @@
 		A3A6A6BA1BF1DF5700258934 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		A3A6A6BB1BF1DF5700258934 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		A3A6A6BC1BF1DF5700258934 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
-		A3D729CC1BF5BEEB00306431 /* UIViewController+CWPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+CWPopup.h"; path = "../../../../Downloads/CWPopup-master/CWPopup/UIViewController+CWPopup.h"; sourceTree = "<group>"; };
-		A3D729CD1BF5BEEB00306431 /* UIViewController+CWPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+CWPopup.m"; path = "../../../../Downloads/CWPopup-master/CWPopup/UIViewController+CWPopup.m"; sourceTree = "<group>"; };
-		A3D729CF1BF5BF0400306431 /* SamplePopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SamplePopupViewController.h; path = "../../../../Downloads/CWPopup-master/CWPopupDemo/SamplePopupViewController.h"; sourceTree = "<group>"; };
-		A3D729D01BF5BF0400306431 /* SamplePopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SamplePopupViewController.m; path = "../../../../Downloads/CWPopup-master/CWPopupDemo/SamplePopupViewController.m"; sourceTree = "<group>"; };
-		A3D729D11BF5BF0400306431 /* SamplePopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SamplePopupViewController.xib; path = "../../../../Downloads/CWPopup-master/CWPopupDemo/SamplePopupViewController.xib"; sourceTree = "<group>"; };
 		A3D729FB1BF5F14500306431 /* LocationConversionHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationConversionHelper.h; sourceTree = "<group>"; };
 		A3D729FC1BF5F1F500306431 /* XY.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XY.h; sourceTree = "<group>"; };
 		A3D729FD1BF5F23F00306431 /* XY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XY.m; sourceTree = "<group>"; };
 		A3D72A011BF5F49300306431 /* LocationConversionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationConversionHelper.m; sourceTree = "<group>"; };
+		A3D72A031BF6B03E00306431 /* UIViewController+CWPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CWPopup.h"; sourceTree = "<group>"; };
+		A3D72A041BF6B03E00306431 /* UIViewController+CWPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CWPopup.m"; sourceTree = "<group>"; };
+		A3D72A061BF6B09F00306431 /* SamplePopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplePopupViewController.m; sourceTree = "<group>"; };
+		A3D72A071BF6B09F00306431 /* SamplePopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplePopupViewController.h; sourceTree = "<group>"; };
+		A3D72A081BF6B09F00306431 /* SamplePopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SamplePopupViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,11 +130,11 @@
 		A3A6A6781BF0090F00258934 /* InteractiveMap */ = {
 			isa = PBXGroup;
 			children = (
-				A3D729CF1BF5BF0400306431 /* SamplePopupViewController.h */,
-				A3D729D01BF5BF0400306431 /* SamplePopupViewController.m */,
-				A3D729D11BF5BF0400306431 /* SamplePopupViewController.xib */,
-				A3D729CC1BF5BEEB00306431 /* UIViewController+CWPopup.h */,
-				A3D729CD1BF5BEEB00306431 /* UIViewController+CWPopup.m */,
+				A3D72A061BF6B09F00306431 /* SamplePopupViewController.m */,
+				A3D72A071BF6B09F00306431 /* SamplePopupViewController.h */,
+				A3D72A081BF6B09F00306431 /* SamplePopupViewController.xib */,
+				A3D72A031BF6B03E00306431 /* UIViewController+CWPopup.h */,
+				A3D72A041BF6B03E00306431 /* UIViewController+CWPopup.m */,
 				A38A35781BF1E58C004974DD /* campusmap.png */,
 				A3A6A6BA1BF1DF5700258934 /* RootViewController.h */,
 				A3A6A6BB1BF1DF5700258934 /* RootViewController.m */,
@@ -306,9 +306,9 @@
 				A3A6A6851BF0090F00258934 /* Main.storyboard in Resources */,
 				A3A6A68A1BF0090F00258934 /* LaunchScreen.xib in Resources */,
 				A3A6A6B81BF026EC00258934 /* Podfile in Resources */,
+				A3D72A0A1BF6B09F00306431 /* SamplePopupViewController.xib in Resources */,
 				A3A6A6BE1BF1DF5700258934 /* RootViewController.xib in Resources */,
 				A3A6A6871BF0090F00258934 /* Images.xcassets in Resources */,
-				A3D729D31BF5BF0400306431 /* SamplePopupViewController.xib in Resources */,
 				A38A35791BF1E58C004974DD /* campusmap.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,15 +378,15 @@
 				A3A6A6B21BF0186300258934 /* TestCases.m in Sources */,
 				A3D729FE1BF5F23F00306431 /* XY.m in Sources */,
 				A3A6A6821BF0090F00258934 /* ViewController.m in Sources */,
+				A3D72A051BF6B03E00306431 /* UIViewController+CWPopup.m in Sources */,
 				A3A6A6AB1BF0102F00258934 /* BuildingManager.m in Sources */,
-				A3D729D21BF5BF0400306431 /* SamplePopupViewController.m in Sources */,
 				A3A6A6A61BF00DC600258934 /* MapHelper.m in Sources */,
 				A3A6A6AF1BF0157800258934 /* MapResult.m in Sources */,
 				A3A6A67F1BF0090F00258934 /* AppDelegate.m in Sources */,
+				A3D72A091BF6B09F00306431 /* SamplePopupViewController.m in Sources */,
 				A3A6A6BD1BF1DF5700258934 /* RootViewController.m in Sources */,
 				A3A6A67C1BF0090F00258934 /* main.m in Sources */,
 				A3A6A6A91BF00E6100258934 /* Location.m in Sources */,
-				A3D729CE1BF5BEEB00306431 /* UIViewController+CWPopup.m in Sources */,
 				A3D72A021BF5F49300306431 /* LocationConversionHelper.m in Sources */,
 				A3A6A6A11BF0096800258934 /* Building.m in Sources */,
 			);

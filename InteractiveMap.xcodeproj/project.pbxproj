@@ -28,6 +28,8 @@
 		A3D729CE1BF5BEEB00306431 /* UIViewController+CWPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D729CD1BF5BEEB00306431 /* UIViewController+CWPopup.m */; };
 		A3D729D21BF5BF0400306431 /* SamplePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D729D01BF5BF0400306431 /* SamplePopupViewController.m */; };
 		A3D729D31BF5BF0400306431 /* SamplePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D729D11BF5BF0400306431 /* SamplePopupViewController.xib */; };
+		A3D729FE1BF5F23F00306431 /* XY.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D729FD1BF5F23F00306431 /* XY.m */; };
+		A3D72A021BF5F49300306431 /* LocationConversionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D72A011BF5F49300306431 /* LocationConversionHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,10 @@
 		A3D729CF1BF5BF0400306431 /* SamplePopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SamplePopupViewController.h; path = "../../../../Downloads/CWPopup-master/CWPopupDemo/SamplePopupViewController.h"; sourceTree = "<group>"; };
 		A3D729D01BF5BF0400306431 /* SamplePopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SamplePopupViewController.m; path = "../../../../Downloads/CWPopup-master/CWPopupDemo/SamplePopupViewController.m"; sourceTree = "<group>"; };
 		A3D729D11BF5BF0400306431 /* SamplePopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SamplePopupViewController.xib; path = "../../../../Downloads/CWPopup-master/CWPopupDemo/SamplePopupViewController.xib"; sourceTree = "<group>"; };
+		A3D729FB1BF5F14500306431 /* LocationConversionHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationConversionHelper.h; sourceTree = "<group>"; };
+		A3D729FC1BF5F1F500306431 /* XY.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XY.h; sourceTree = "<group>"; };
+		A3D729FD1BF5F23F00306431 /* XY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XY.m; sourceTree = "<group>"; };
+		A3D72A011BF5F49300306431 /* LocationConversionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationConversionHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +195,10 @@
 				A3A6A6B01BF0185600258934 /* TestCases.h */,
 				A3A6A6B11BF0186300258934 /* TestCases.m */,
 				A3A6A6B91BF080DF00258934 /* MapHelperDelgate.h */,
+				A3D729FB1BF5F14500306431 /* LocationConversionHelper.h */,
+				A3D729FC1BF5F1F500306431 /* XY.h */,
+				A3D729FD1BF5F23F00306431 /* XY.m */,
+				A3D72A011BF5F49300306431 /* LocationConversionHelper.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -366,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3A6A6B21BF0186300258934 /* TestCases.m in Sources */,
+				A3D729FE1BF5F23F00306431 /* XY.m in Sources */,
 				A3A6A6821BF0090F00258934 /* ViewController.m in Sources */,
 				A3A6A6AB1BF0102F00258934 /* BuildingManager.m in Sources */,
 				A3D729D21BF5BF0400306431 /* SamplePopupViewController.m in Sources */,
@@ -376,6 +387,7 @@
 				A3A6A67C1BF0090F00258934 /* main.m in Sources */,
 				A3A6A6A91BF00E6100258934 /* Location.m in Sources */,
 				A3D729CE1BF5BEEB00306431 /* UIViewController+CWPopup.m in Sources */,
+				A3D72A021BF5F49300306431 /* LocationConversionHelper.m in Sources */,
 				A3A6A6A11BF0096800258934 /* Building.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

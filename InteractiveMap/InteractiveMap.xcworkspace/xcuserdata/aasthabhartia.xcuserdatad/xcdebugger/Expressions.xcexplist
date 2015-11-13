@@ -25,13 +25,66 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[BuildingManager init]:BuildingManager.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "kingLibrary">
+            </PersistentString>
+            <PersistentString
+               value = "self.buildingList">
+            </PersistentString>
+            <PersistentString
+               value = "Location">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "main:main.m">
       </ContextState>
       <ContextState
          contextName = "-[RootViewController searchBarSearchButtonClicked:]:RootViewController.m">
          <PersistentStrings>
             <PersistentString
+               value = "self.scrollView.bounds.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "lo">
+            </PersistentString>
+            <PersistentString
                value = "searchBar.text">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.bounds.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.contentSize.height">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.bounds.size.height">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.zoomScale">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.contentSize.width">
+            </PersistentString>
+            <PersistentString
+               value = "subview.bounds.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "lo.frame.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "result">
+            </PersistentString>
+            <PersistentString
+               value = "imageView.image">
+            </PersistentString>
+            <PersistentString
+               value = "contentSize.height">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -65,6 +118,17 @@
                value = "self">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[LocationConversionHelper convertLocationToXY:withImageWidth:]:LocationConversionHelper.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "location.latitude">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Building initBuildingWithName:andAddress:andFormattedAddress:andLocation:]:Building.m">
       </ContextState>
       <ContextState
          contextName = "-[MapHelper init]:MapHelper.m">

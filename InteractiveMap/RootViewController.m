@@ -15,6 +15,8 @@
 #import "MapResult.h"
 #import "SamplePopupViewController.h"
 #import "UIViewController+CWPopup.h"
+#import "LocationConversionHelper.h"
+#import "XY.h"
 
 @interface RootViewController ()
 
@@ -64,6 +66,7 @@
     //CGFloat tempy = imageView.center.y - (scrollView.bounds.size.height/2);
     //CGPoint myScrollViewOffset = CGPointMake( tempx, tempy);
     //scrollView.contentOffset = myScrollViewOffset;
+    
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                 action:@selector(handleSingleTap:)];
@@ -170,13 +173,39 @@
     Building *building = [buildingManager searchBuildingWithName:searchBar.text];
     if (building!=nil)
     {
+        LocationConversionHelper *locationConversionHelper = [LocationConversionHelper sharedInstance];
+        scrollView.zoomScale = 1.0;
+        XY *result = [locationConversionHelper convertLocationToXY:building.location withImageWidth:self.imageView.image.size.width];
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:building.name
-                                                        message:@"Need to zoom into building"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        //[scrollView setFrame:CGRectMake(result.x, result.y, subView.frame.size.width, subView.frame.size.height)];
+        
+        CGPoint zoomPoint = CGPointMake(result.x,result.y);
+        
+        //Normalize current content size back to content scale of 1.0f
+        CGSize contentSize;
+        contentSize.width = (scrollView.contentSize.width / scrollView.zoomScale);
+        contentSize.height = (scrollView.contentSize.height / scrollView.zoomScale);
+        
+        UIView *lo = [scrollView.subviews lastObject];
+        //translate the zoom point to relative to the content rect
+        zoomPoint.x = (result.x /scrollView.bounds.size.width) * contentSize.width;
+        zoomPoint.y = (result.y /scrollView.bounds.size.width) * contentSize.height;
+        
+        //derive the size of the region to zoom to
+        CGSize zoomSize;
+        zoomSize.width = scrollView.bounds.size.width / 1;
+        zoomSize.height = scrollView.bounds.size.height /1;
+        
+        //offset the zoom rect so the actual zoom point is in the middle of the rectangle
+        CGRect zoomRect;
+        zoomRect.origin.x = zoomPoint.x - zoomSize.width / 2.0f;
+        zoomRect.origin.y = zoomPoint.y - zoomSize.height / 2.0f;
+        zoomRect.size.width = zoomSize.width;
+        zoomRect.size.height = zoomSize.height;
+        
+        //apply the resize
+        [scrollView zoomToRect: zoomRect animated: TRUE];
+        
     }
     else
     {
@@ -198,6 +227,27 @@
     }
 }
 
+-(void)setAnchorPoint:(CGPoint)anchorPoint forView:(UIView *)view
+{
+    CGPoint newPoint = CGPointMake(view.bounds.size.width * anchorPoint.x,
+                                   view.bounds.size.height * anchorPoint.y);
+    CGPoint oldPoint = CGPointMake(view.bounds.size.width * view.layer.anchorPoint.x,
+                                   view.bounds.size.height * view.layer.anchorPoint.y);
+    
+    newPoint = CGPointApplyAffineTransform(newPoint, view.transform);
+    oldPoint = CGPointApplyAffineTransform(oldPoint, view.transform);
+    
+    CGPoint position = view.layer.position;
+    
+    position.x -= oldPoint.x;
+    position.x += newPoint.x;
+    
+    position.y -= oldPoint.y;
+    position.y += newPoint.y;
+    
+    view.layer.position = position;
+    view.layer.anchorPoint = anchorPoint;
+}
 
 @end
 

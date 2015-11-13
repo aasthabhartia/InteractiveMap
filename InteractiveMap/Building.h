@@ -9,13 +9,16 @@
 #ifndef InteractiveMap_Building_h
 #define InteractiveMap_Building_h
 
+#import "Location.h"
+
 @interface Building : NSObject
 
 @property (weak) NSString *name;
 @property (weak) NSString *formattedAddress;
 @property (weak) NSString *address;
+@property (strong) Location *location;
 
-- (id) initBuildingWithName:(NSString*)name andAddress:(NSString *)address andFormattedAddress: (NSString *)formattedAddress;
+- (id) initBuildingWithName:(NSString*)name andAddress:(NSString *)address andFormattedAddress: (NSString *)formattedAddress andLocation:(Location*)location;
 
 @end
 

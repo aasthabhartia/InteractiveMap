@@ -9,6 +9,7 @@
                 <outlet property="BBCButton" destination="2j1-SV-zot" id="tuc-8K-4gN"/>
                 <outlet property="YUHbutton" destination="dmc-3B-Cgl" id="kb7-nY-7M4"/>
                 <outlet property="engineeringButton" destination="wgp-4O-EL5" id="HAw-zI-ped"/>
+                <outlet property="imageView" destination="eXg-4V-XhV" id="Xdh-rk-YYF"/>
                 <outlet property="kingLibraryButton" destination="pnS-gO-Jto" id="zfx-4e-OB5"/>
                 <outlet property="scrollView" destination="dzZ-vv-Azw" id="t9n-Vi-kfF"/>
                 <outlet property="searchBar" destination="Sqj-iN-UMQ" id="gHd-Rn-AxB"/>
@@ -37,27 +38,19 @@
                             <rect key="frame" x="16" y="44" width="320" height="491"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <view contentMode="TopLeft" id="raL-6E-oG3">
-                                    <rect key="frame" x="-207" y="-72" width="796" height="958"/>
+                                <view contentMode="center" id="raL-6E-oG3">
+                                    <rect key="frame" x="-207" y="-72" width="707" height="707"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="campusmap.png" id="eXg-4V-XhV">
                                             <rect key="frame" x="23" y="8" width="707" height="707"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ykB-qT-U3g">
-                                            <rect key="frame" x="398" y="517" width="52" height="58"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="South Parking Garage">
-                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wgp-4O-EL5" userLabel="Engineering Building">
                                             <rect key="frame" x="316" y="149" width="66" height="46"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Engineering Building">
-                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
@@ -66,15 +59,15 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="BBC"/>
                                             <state key="normal" title="BBC">
-                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UBv-h1-y9P">
-                                            <rect key="frame" x="363" y="215" width="109" height="41"/>
+                                            <rect key="frame" x="340" y="227" width="109" height="41"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Student Union">
-                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
@@ -82,7 +75,7 @@
                                             <rect key="frame" x="189" y="478" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Yoshihiro Uchida Hall">
-                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
@@ -90,7 +83,15 @@
                                             <rect key="frame" x="72" y="300" width="57" height="49"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="King Library">
-                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ykB-qT-U3g">
+                                            <rect key="frame" x="382" y="518" width="52" height="58"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="South Parking Garage">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>

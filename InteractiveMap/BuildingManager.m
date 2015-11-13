@@ -47,7 +47,7 @@ static BuildingManager* sharedObj = nil;
                                                             initBuildingWithName:@"King Library"
                                                             andAddress:@"Dr.+Martin+Luther+King,+Jr.+Library,+150+East+San+Fernando+Street,+San+Jose,+CA+95112"
                                                             andFormattedAddress:@"Dr. Martin+Luther King, Jr. Library, 150 East San Fernando Street, San+Jose, CA 95112"
-                                 andLocation:[[Location alloc] initWithLatitude:37.3354377 andLongitude:-121.8871663]];
+                                 andLocation:[[Location alloc] initWithLatitude:37.3358071 andLongitude:-121.8865599]];
         
         
         Building *engineeringBuilding = [[Building alloc] initBuildingWithName:@"Engineering Building"
@@ -67,21 +67,23 @@ static BuildingManager* sharedObj = nil;
         Building *studentUnion = [[Building alloc] initBuildingWithName:@"Student Union"
                                                              andAddress:@"Student+Union+Building,+San+Jose,+CA+95112"
                                                              andFormattedAddress:@"Student Union Building, San Jose, CA 95112"
-                                                            andLocation:[[Location alloc] initWithLatitude:37.3367014 andLongitude:-121.8820399]];
+                                                            andLocation:[[Location alloc] initWithLatitude:37.3367305
+                                                                                                andLongitude:-121.8804744]];
+        
         
         
         Building *bbc = [[Building alloc] initBuildingWithName:@"BBC"
                                                     andAddress:@"Boccardo+Business+Complex,+San+Jose,+CA+95112"
                                                     andFormattedAddress:@"Boccardo Business Complex, San Jose, CA 95112"
-                                                            andLocation:[[Location alloc] initWithLatitude:37.3366494
-                                                                andLongitude:-121.8808677]];
+                                                            andLocation:[[Location alloc] initWithLatitude:37.3366
+                                                                andLongitude:-121.8756652]];
 
         
         Building *southParkingGarage = [[Building alloc] initBuildingWithName:@"South Parking Garage"
                                                                    andAddress:@"San+Jose+State+University+South+Garage,+330+South+7th+Street,+San+Jose,+CA+95112"
                                         andFormattedAddress:@"San Jose State University South Garage, 330 South 7th Street, San Jose, CA 95112"
-                                                        andLocation:[[Location alloc] initWithLatitude:37.3333855
-                                                                                          andLongitude:-121.8824472]];
+                                                        andLocation:[[Location alloc] initWithLatitude:37.3335099
+                                                                                          andLongitude:-121.8807696]];
         
         [self.buildingList addObject:kingLibrary];
         [self.buildingList addObject:engineeringBuilding];

@@ -118,10 +118,11 @@
 - (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
     
     UIButton *myButton = (UIButton *)recognizer.view;
-    Location *currentLocation = [self.mapHelper getCurrentLocation];
+    MapHelper *mapHelper = [MapHelper sharedInstance];
+    Location *currentLocation = [mapHelper getCurrentLocation];
     BuildingManager *buildingManager = [BuildingManager sharedInstance];
     Building *building = [buildingManager searchBuildingWithName:myButton.titleLabel.text];
-    MapResult *mapResult = [self.mapHelper getResultFromLocation:currentLocation
+    MapResult *mapResult = [mapHelper getResultFromLocation:currentLocation
                                                  toBuilding:building];
     
     
@@ -158,11 +159,11 @@
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)sView
 {
-    CGFloat offsetX = MAX((sView.bounds.size.width - sView.contentSize.width) * 0.5, 0.0);
-    CGFloat offsetY = MAX((sView.bounds.size.height - sView.contentSize.height) * 0.5, 0.0);
+    //CGFloat offsetX = MAX((sView.bounds.size.width - sView.contentSize.width) * 0.5, 0.0);
+    //CGFloat offsetY = MAX((sView.bounds.size.height - sView.contentSize.height) * 0.5, 0.0);
     
-    subView.center = CGPointMake(sView.contentSize.width * 0.5 + offsetX,
-                                 sView.contentSize.height * 0.5 + offsetY);
+    //subView.center = CGPointMake(sView.contentSize.width * 0.5 + offsetX,
+    //                             sView.contentSize.height * 0.5 + offsetY);
 
     return subView;
 }
@@ -186,25 +187,25 @@
         contentSize.width = (scrollView.contentSize.width / scrollView.zoomScale);
         contentSize.height = (scrollView.contentSize.height / scrollView.zoomScale);
         
-        UIView *lo = [scrollView.subviews lastObject];
         //translate the zoom point to relative to the content rect
-        zoomPoint.x = (result.x /scrollView.bounds.size.width) * contentSize.width;
-        zoomPoint.y = (result.y /scrollView.bounds.size.width) * contentSize.height;
+        //zoomPoint.x = (result.x /scrollView.bounds.size.width) * contentSize.width;
+        //zoomPoint.y = (result.y /scrollView.bounds.size.height) * contentSize.height;
         
         //derive the size of the region to zoom to
         CGSize zoomSize;
-        zoomSize.width = scrollView.bounds.size.width / 1;
-        zoomSize.height = scrollView.bounds.size.height /1;
+        zoomSize.width = scrollView.bounds.size.width /1.5;
+        zoomSize.height = scrollView.bounds.size.height /1.5;
         
         //offset the zoom rect so the actual zoom point is in the middle of the rectangle
         CGRect zoomRect;
-        zoomRect.origin.x = zoomPoint.x - zoomSize.width / 2.0f;
-        zoomRect.origin.y = zoomPoint.y - zoomSize.height / 2.0f;
+        zoomRect.origin.x = zoomPoint.x - zoomSize.width/2.0;
+        zoomRect.origin.y = zoomPoint.y - zoomSize.height/2.0;
         zoomRect.size.width = zoomSize.width;
         zoomRect.size.height = zoomSize.height;
         
         //apply the resize
         [scrollView zoomToRect: zoomRect animated: TRUE];
+        
         
     }
     else

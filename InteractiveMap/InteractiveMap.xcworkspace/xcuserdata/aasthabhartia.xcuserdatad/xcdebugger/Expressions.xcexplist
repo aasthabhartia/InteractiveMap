@@ -125,6 +125,9 @@
             <PersistentString
                value = "location.latitude">
             </PersistentString>
+            <PersistentString
+               value = "location.longitude">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
@@ -135,6 +138,14 @@
          <PersistentStrings>
             <PersistentString
                value = "self.locationManager.authorizationStatus">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RootViewController updatedLocation]:RootViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.imageView.image.size.width">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

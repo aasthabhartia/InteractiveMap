@@ -40,9 +40,12 @@ static LocationConversionHelper* sharedObj = nil;
 
 -(XY*) convertLocationToXY:(Location*)location withImageWidth:(double) imageWidth
 {
+    //double x = (imageWidth * (121.88597 - fabs(location.longitude) ))/( 0.00925);
+    //double y = imageWidth - (imageWidth * (fabs(location.latitude)-37.33161)/(0.00703));
+
     
-    double x = imageWidth * (fabs(location.longitude) -121.8853334)/(121.876243 -121.8853334);
-    double y = imageWidth - (imageWidth * (fabs(location.latitude)-37.331361)/(37.3376163-37.331361));
+    double x = (imageWidth * (121.886478 - fabs(location.longitude)))/( 0.010235);
+    double y = imageWidth - (imageWidth * (fabs(location.latitude)-37.3316147)/(0.0070349));
     return [[XY alloc] initWithX:x andLongitude:y];
     
 }

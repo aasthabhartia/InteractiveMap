@@ -18,26 +18,35 @@
 
 @implementation AppDelegate
 
+NSString * const kRootViewControllerKey = @"RootViewKey";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    self.window.backgroundColor = [UIColor whiteColor];
+    
+     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    [self.window setRootViewController:self.navController];
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    
     self.RootViewController = [[RootViewController alloc] init];
+    self.RootViewController.restorationIdentifier = @"RootViewController";
     self.navController = [[UINavigationController alloc] initWithRootViewController:self.RootViewController];
     self.navController.navigationBarHidden = YES;
-    //[self.window addSubview:self.navController.view];
-    //[[UINavigationController] initWithRootViewController:navController.view];
-    [self.window setRootViewController:self.navController];
-    //[GMSServices provideAPIKey:@"AIzaSyAlCtVfH23jI-Zn-uKnvo41h08oZGYFOsA"];
+    self.navController.restorationIdentifier = @"NavViewController";
+    
+    
     
     // FIXME : Right now only running test cases to setup Model
     //[[TestCases alloc] initAndRun];
     
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -59,6 +68,25 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+- (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+- (void)application:(UIApplication *)application willEncodeRestorableStateWithCoder:(NSCoder *)coder {
+    NSLog(@"willEncodeRestorableStateWithCoder"); // seeing this in the debug window
+}
+
+- (void)application:(UIApplication *)application didDecodeRestorableStateWithCoder:(NSCoder *)coder {
+    NSLog(@"didDecodeRestorableStateWithCoder"); // seeing this in the debug window
 }
 
 @end

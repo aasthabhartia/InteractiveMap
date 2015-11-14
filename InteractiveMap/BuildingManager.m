@@ -47,7 +47,7 @@ static BuildingManager* sharedObj = nil;
                                                             initBuildingWithName:@"King Library"
                                                             andAddress:@"Dr.+Martin+Luther+King,+Jr.+Library,+150+East+San+Fernando+Street,+San+Jose,+CA+95112"
                                                             andFormattedAddress:@"Dr. Martin+Luther King, Jr. Library, 150 East San Fernando Street, San+Jose, CA 95112"
-                                 andLocation:[[Location alloc] initWithLatitude:37.3358071 andLongitude:-121.8865599]];
+                                 andLocation:[[Location alloc] initWithLatitude:37.3358071 andLongitude:-121.885850]];
         
         
         Building *engineeringBuilding = [[Building alloc] initBuildingWithName:@"Engineering Building"
@@ -60,7 +60,7 @@ static BuildingManager* sharedObj = nil;
         Building *uchidaHall = [[Building alloc] initBuildingWithName:@"Yoshihiro Uchida Hall"
                                                            andAddress:@"Yoshihiro+Uchida+Hall,+San+Jose,+CA+95112"
                                                            andFormattedAddress:@"Yoshihiro Uchida Hall, San Jose, CA 95112"
-                                                           andLocation:[[Location alloc] initWithLatitude:37.33377 andLongitude:-121.8855823]];
+                                                           andLocation:[[Location alloc] initWithLatitude:37.33377 andLongitude:-121.884400]];
         
         
         

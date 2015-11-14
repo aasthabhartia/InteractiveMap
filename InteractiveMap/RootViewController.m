@@ -48,7 +48,7 @@
     [mapHelper getCurrentLocation];
     self.useBlurForPopup = YES;
     //CGRect scrollFrame = CGRectMake(0, 20, 600, 800);
-    
+    self.restorationClass = [self class];
     //[scrollView setFrame:scrollFrame];
     //[scrollView setMinimumZoomScale:0.1];
     //[scrollView setMaximumZoomScale:2.0];
@@ -136,6 +136,7 @@
         UIImage * buildingImage = [[UIImage alloc] init ];
         buildingImage = [UIImage imageNamed:imgName];
         SamplePopupViewController *popupController = [[SamplePopupViewController alloc] initWithNibName:@"SamplePopupViewController" bundle:nil];
+        popupController.restorationIdentifier = @"SamplePopupViewController";
        [self presentPopupViewController:popupController animated:YES completion:^(void) {
             NSLog(@"popup view presented");}];
         [popupController.buildingName setTitle:building.name];
@@ -242,6 +243,23 @@
         [self.circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(result.x,result.y , 10, 10)] CGPath]];
     
     
+}
+
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    [coder encodeObject:self.scrollView forKey:@"scrollView"];
+    [super encodeRestorableStateWithCoder:coder];
+}
+
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
+{
+        NSLog(@"leftDrawer: %@", [coder decodeObjectForKey:@"scrollView"]);
+    [super decodeRestorableStateWithCoder:coder];
+}
+
++ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder
+{
+    return [self new];
 }
 
 @end
